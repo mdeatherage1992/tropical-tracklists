@@ -1,12 +1,13 @@
-import react from 'react'
+import React, {Component} from 'react';
 
-class Edit extends React.Component {
-  getInitialState: function() {
+
+class Edit extends Component {
+  getInitialState() {
     return {
       editSuccessful: null,
       deleteUnsuccessful: false
     };
-  },
+  }
 
   handleUpdate(e) {
     e.preventDefault();
@@ -29,24 +30,24 @@ class Edit extends React.Component {
       data: userInfo,
       error: function (error) {
         that.updateEdit("false");
-      },
+      }
       success: function (res) {
         that.updateEdit("true");
-      },
+      }
     });
-  },
+  }
 
   updateEdit(string) {
     this.setState({
       editSuccessful: string
     });
-  },
+  }
 
   updateDeleteError() {
     this.setState({
       deleteUnsuccessful: true
     });
-  },
+  }
 
   getEditData() {
     var customClass = "hidden";
@@ -62,9 +63,9 @@ class Edit extends React.Component {
         break;
     };
     return {message: message, customClass: customClass};
-  },
+  }
 
-  render: function() {
+  render() {
     var errorClass = this.state.deleteUnsuccessful ? "" : "hidden"
     var editData = this.getEditData()
     return (

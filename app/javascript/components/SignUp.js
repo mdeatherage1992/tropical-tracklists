@@ -1,11 +1,12 @@
-import react from 'react'
+import React, {Component} from 'react';
 
-class SignUp extends React.Component {
-  getInitialState: function() {
+
+class SignUp extends Component {
+  getInitialState() {
     return {
       signupUnsuccessful: false
     };
-  },
+  }
 
   handleSignup(e) {
     e.preventDefault();
@@ -30,15 +31,15 @@ class SignUp extends React.Component {
         that.props.updateCurrentUser(res.email);
       },
     });
-  },
+  }
 
   updateSignupError() {
     this.setState({
       signupUnsuccessful: true
     });
-  },
+  }
 
-  render: function() {
+  render() {
     var errorClass = this.state.signupUnsuccessful ? "" : "hidden"
     return (
       <div>

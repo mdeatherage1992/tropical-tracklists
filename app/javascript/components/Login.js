@@ -1,11 +1,12 @@
-import react from 'react'
+import React, {Component} from 'react';
 
-class Login extends React.Component {
-    getInitialState: function() {
+
+class Login extends Component {
+    getInitialState() {
       return {
         loginUnsuccessful: false
       };
-    },
+    }
 
     handleLogin(e) {
       e.preventDefault();
@@ -29,13 +30,13 @@ class Login extends React.Component {
           that.props.updateCurrentUser(res.email);
         },
       });
-    },
+    }
 
     updateLoginError() {
       this.setState({
         loginUnsuccessful: true
       });
-    },
+    }
 
     render() {
       var errorClass = this.state.loginUnsuccessful ? "" : "hidden"

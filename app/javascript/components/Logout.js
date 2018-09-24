@@ -1,6 +1,7 @@
-import react from 'react'
+import React, {Component} from 'react';
 
-class Logout extends React.Component {
+
+class Logout extends Component {
 
   handleLogout(e) {
     e.preventDefault();
@@ -16,9 +17,9 @@ class Logout extends React.Component {
         that.props.changePage("login");
       },
     });
-  },
+  }
 
-  render: function() {
+  render() {
     return (
       <button onClick={this.handleLogout}>Sign Out</button>
     );

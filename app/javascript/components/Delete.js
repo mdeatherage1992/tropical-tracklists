@@ -1,6 +1,7 @@
-import react from 'react'
+import React, {Component} from 'react';
 
-class Delete extends React.Component {
+
+class Delete extends Component {
 
   handleDelete(e) {
     e.preventDefault();
@@ -21,13 +22,13 @@ class Delete extends React.Component {
         that.props.changePage("login");
       },
     });
-},
+}
 
-  render: function() {
+  render() {
     return (
       <button onClick={this.handleDelete}>Delete Account</button>
     );
   };
-});
+};
 
 export default delete
